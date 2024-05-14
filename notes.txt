@@ -1,3 +1,11 @@
 - Your game will be played against the computer. 
 - You will write a function that randomly returns “rock”, “paper” or “scissors”.
 
+INITIALIZE:
+
+- total rounds to be played = 5
+- player score = 0
+- pc score = 0
+- generate the pc choice
+- get the user choice
+
