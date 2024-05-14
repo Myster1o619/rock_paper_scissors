@@ -9,3 +9,9 @@ INITIALIZE:
 - generate the pc choice
 - get the user choice
 
+SCORE COMPARISON
+
+WHILE total rounds played <= 5:
+- check user choise vs. pc choice
+    - add 1 to player score or 1 to pc score or stay the same if a draw
+
