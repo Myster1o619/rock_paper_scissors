@@ -9,6 +9,7 @@ let pcChoice = "";
 
 const initGame = () => {
     pcChoice = generateComputerChoice();
+    playerChoice = getPlayerChoice()
 }
 
 const generateComputerChoice = () => {
@@ -35,5 +36,11 @@ const assignComputerChoice = (randomNum = 0) => {
             choice = SCISSORS;
             break;
     }
+    return choice;
+}
+
+//Get the players choice
+const getPlayerChoice = () => {
+    choice = prompt("What do you choose? Rock, Paper, or Scissors?");
     return choice;
 }
