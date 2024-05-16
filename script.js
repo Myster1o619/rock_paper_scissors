@@ -8,11 +8,15 @@ let playerChoice = "";
 let pcChoice = "";
 
 const initGame = () => {
-    pcChoice = generateComputerChoice();
-    console.log(`PC choice: ${pcChoice}`);
-    playerChoice = getPlayerChoice();
-    console.log(`Player choice: ${playerChoice}`);
-    compareChoices(pcChoice, playerChoice);
+    for (let i = 1; i <= totalRounds; i++) {
+        pcChoice = generateComputerChoice();
+        console.log(`PC choice: ${pcChoice}`);
+        playerChoice = getPlayerChoice();
+        console.log(`Player choice: ${playerChoice}`);
+        compareChoices(pcChoice, playerChoice);
+    }
+    // Take final scores to determine the winner
+    declareTheWinner(playerScore, pcScore);
 }
 
 const generateComputerChoice = () => {
@@ -100,3 +104,17 @@ const compareChoices = (compChoice, humanChoice) => {
 
     }
 }
+
+// Outputs the winner after 5 round played
+const declareTheWinner = (playerScore, pcScore) => {
+    console.warn("TOTAL SCORE AFTER 5 ROUNDS:");
+    console.log(`PLAYER: ${playerScore}`);
+    console.log(`COMPUTER: ${pcScore}`);
+    if (playerScore > pcScore) {
+        console.warn("PLAYER WINS!");
+    } else if (pcScore > playerScore) {
+        console.warn("COMPUTER WINS!");
+    } else {
+        console.warn("TIE GAME!");
+    }
+};
