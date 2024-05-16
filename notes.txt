@@ -12,7 +12,7 @@ INITIALIZE:
 SCORE COMPARISON
 
 WHILE total rounds played <= 5:
-- check user choise vs. pc choice
+- check user choice vs. pc choice
     - add 1 to player score or 1 to pc score or stay the same if a draw
 
 GAME ENDS
