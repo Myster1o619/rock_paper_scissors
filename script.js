@@ -9,7 +9,9 @@ let pcChoice = "";
 
 const initGame = () => {
     pcChoice = generateComputerChoice();
+    console.log(`PC choice: ${pcChoice}`);
     playerChoice = getPlayerChoice();
+    console.log(`Player choice: ${playerChoice}`);
     compareChoices(pcChoice, playerChoice);
 }
 
@@ -17,7 +19,7 @@ const generateComputerChoice = () => {
     //  Returns a random integer from 0 to 2:
     const chosenNumber = Math.floor(Math.random() * 3);
     // Assign number to an element for the pc:
-    pcChoice = assignComputerChoice(chosenNumber);
+    return assignComputerChoice(chosenNumber);
 }
 
 // Take number between 0 - 2 (randomNum) and assign choice variable a value: rock/paper/scissors
@@ -48,5 +50,21 @@ const getPlayerChoice = () => {
 
 // Check computer choice versus player choice and determine if there is a winner or a draw
 const compareChoices = (compChoice, humanChoice) => {
+    if (humanChoice === ROCK) {
+        if (compChoice === PAPER) {
+            console.warn(`${compChoice} beats ${humanChoice}`);
+            pcScore += 1;
+            console.log(pcScore);
+        }
 
+        if (compChoice === SCISSORS) {
+            console.warn(`${humanChoice} beats ${compChoice}`);
+            playerScore += 1;
+            console.log(playerScore);
+        }
+
+        if (compChoice === humanChoice) {
+            console.warn(`TIE!`);
+        }
+    }
 }
