@@ -50,6 +50,11 @@ const getPlayerChoice = () => {
 
 // Check computer choice versus player choice and determine if there is a winner or a draw
 const compareChoices = (compChoice, humanChoice) => {
+    if (compChoice === humanChoice) {
+        console.warn(`TIE!`);
+        return;
+    }
+
     if (humanChoice === ROCK) {
         if (compChoice === PAPER) {
             console.warn(`${compChoice} beats ${humanChoice}`);
@@ -63,8 +68,35 @@ const compareChoices = (compChoice, humanChoice) => {
             console.log(playerScore);
         }
 
-        if (compChoice === humanChoice) {
-            console.warn(`TIE!`);
+    }
+
+    if (humanChoice === PAPER) {
+        if (compChoice === SCISSORS) {
+            console.warn(`${compChoice} beats ${humanChoice}`);
+            pcScore += 1;
+            console.log(pcScore);
         }
+
+        if (compChoice === ROCK) {
+            console.warn(`${humanChoice} beats ${compChoice}`);
+            playerScore += 1;
+            console.log(playerScore);
+        }
+
+    }
+
+    if (humanChoice === SCISSORS) {
+        if (compChoice === ROCK) {
+            console.warn(`${compChoice} beats ${humanChoice}`);
+            pcScore += 1;
+            console.log(pcScore);
+        }
+
+        if (compChoice === PAPER) {
+            console.warn(`${humanChoice} beats ${compChoice}`);
+            playerScore += 1;
+            console.log(playerScore);
+        }
+
     }
 }
