@@ -10,6 +10,7 @@ let pcChoice = "";
 const initGame = () => {
     pcChoice = generateComputerChoice();
     playerChoice = getPlayerChoice();
+    compareChoices(pcChoice, playerChoice);
 }
 
 const generateComputerChoice = () => {
@@ -43,4 +44,9 @@ const assignComputerChoice = (randomNum = 0) => {
 const getPlayerChoice = () => {
     choice = prompt("What do you choose? Rock, Paper, or Scissors?");
     return choice.toLowerCase();
+}
+
+// Check computer choice versus player choice and determine if there is a winner or a draw
+const compareChoices = (compChoice, humanChoice) => {
+
 }
