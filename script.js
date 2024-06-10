@@ -7,6 +7,27 @@ let pcScore = 0;
 let playerChoice = "";
 let pcChoice = "";
 
+document.addEventListener('DOMContentLoaded', () => {
+    // let btn = document.getElementById('btn');
+    // btn.addEventListener('click', () => {
+    //     // handle the click event
+    //     console.log('clicked');
+    // });
+    
+    //add event listeners to buttons
+    addButtonListeners();
+});
+
+const addButtonListeners = () => {
+    const rockButton = document.querySelector(".rock-button")
+    const paperButton = document.querySelector(".paper-button")
+    const scissorsButton = document.querySelector(".scissors-button")
+
+    console.dir(rockButton)
+    console.dir(paperButton)
+    console.dir(scissorsButton)
+}
+
 const initGame = () => {
     for (let i = 1; i <= totalRounds; i++) {
         pcChoice = generateComputerChoice();
