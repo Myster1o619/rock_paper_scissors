@@ -16,10 +16,6 @@ const addButtonListeners = () => {
     const paperButton = document.querySelector(".paper-button")
     const scissorsButton = document.querySelector(".scissors-button")
 
-    console.dir(rockButton)
-    console.dir(paperButton)
-    console.dir(scissorsButton)
-
     rockButton.addEventListener("click", rockButtonClicked);
     paperButton.addEventListener("click", paperButtonClicked);
     scissorsButton.addEventListener("click", scissorsButtonClicked);
