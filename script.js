@@ -1,7 +1,7 @@
 const totalRounds = 5;
-const ROCK = "rock";
-const PAPER = "paper";
-const SCISSORS = "scissors";
+const ROCK = " rock";
+const PAPER = " paper";
+const SCISSORS = " scissors";
 let playerScore = 0;
 let pcScore = 0;
 let playerChoice = "";
@@ -26,15 +26,37 @@ const addButtonListeners = () => {
 }
 
 const rockButtonClicked = () => {
-    console.log("ROCK")
+    playerChoice = ROCK;
+    pcChoice = generateComputerChoice();
+    console.log(`PC choice: ${pcChoice}`);
+    displayPlayerChoice(playerChoice);
+
+}
+
+const displayPlayerChoice = (playerChoice = "") => {
+    const playerChoiceHeading = document.querySelector(".player-choice");
+
+    let playerChoiceTextHolder = document.querySelector(".player-choice-display");
+    if (!playerChoiceTextHolder) {
+        playerChoiceTextHolder = document.createElement("span");
+        playerChoiceTextHolder.className = "player-choice-display";
+    } 
+    playerChoiceTextHolder.textContent = playerChoice;
+    playerChoiceHeading.appendChild(playerChoiceTextHolder);
 }
 
 const paperButtonClicked = () => {
-    console.log("PAPER")
+    playerChoice = PAPER;
+    pcChoice = generateComputerChoice();
+    console.log(`PC choice: ${pcChoice}`);
+    displayPlayerChoice(playerChoice);
 }
 
 const scissorsButtonClicked = () => {
-    console.log("SCISSORS")
+    playerChoice = SCISSORS;
+    pcChoice = generateComputerChoice();
+    console.log(`PC choice: ${pcChoice}`);
+    displayPlayerChoice(playerChoice);
 }
 
 const initGame = () => {
