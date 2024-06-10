@@ -14,3 +14,12 @@
 .flex-container .two {
     flex: 2 1 0%;
 }
+
+.one, .three {
+    text-align: center;
+}
+
+button {
+    padding: 5px;
+    margin: 10px;
+}
