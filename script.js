@@ -8,13 +8,6 @@ let playerChoice = "";
 let pcChoice = "";
 
 document.addEventListener('DOMContentLoaded', () => {
-    // let btn = document.getElementById('btn');
-    // btn.addEventListener('click', () => {
-    //     // handle the click event
-    //     console.log('clicked');
-    // });
-    
-    //add event listeners to buttons
     addButtonListeners();
 });
 
@@ -26,6 +19,22 @@ const addButtonListeners = () => {
     console.dir(rockButton)
     console.dir(paperButton)
     console.dir(scissorsButton)
+
+    rockButton.addEventListener("click", rockButtonClicked);
+    paperButton.addEventListener("click", paperButtonClicked);
+    scissorsButton.addEventListener("click", scissorsButtonClicked);
+}
+
+const rockButtonClicked = () => {
+    console.log("ROCK")
+}
+
+const paperButtonClicked = () => {
+    console.log("PAPER")
+}
+
+const scissorsButtonClicked = () => {
+    console.log("SCISSORS")
 }
 
 const initGame = () => {
