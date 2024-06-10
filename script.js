@@ -28,9 +28,22 @@ const addButtonListeners = () => {
 const rockButtonClicked = () => {
     playerChoice = ROCK;
     pcChoice = generateComputerChoice();
-    console.log(`PC choice: ${pcChoice}`);
     displayPlayerChoice(playerChoice);
+    displayComputerChoice(pcChoice);
+}
 
+const paperButtonClicked = () => {
+    playerChoice = PAPER;
+    pcChoice = generateComputerChoice();
+    displayPlayerChoice(playerChoice);
+    displayComputerChoice(pcChoice);
+}
+
+const scissorsButtonClicked = () => {
+    playerChoice = SCISSORS;
+    pcChoice = generateComputerChoice();
+    displayPlayerChoice(playerChoice);
+    displayComputerChoice(pcChoice);
 }
 
 const displayPlayerChoice = (playerChoice = "") => {
@@ -40,24 +53,24 @@ const displayPlayerChoice = (playerChoice = "") => {
     if (!playerChoiceTextHolder) {
         playerChoiceTextHolder = document.createElement("span");
         playerChoiceTextHolder.className = "player-choice-display";
-    } 
+    }
     playerChoiceTextHolder.textContent = playerChoice;
     playerChoiceHeading.appendChild(playerChoiceTextHolder);
 }
 
-const paperButtonClicked = () => {
-    playerChoice = PAPER;
-    pcChoice = generateComputerChoice();
-    console.log(`PC choice: ${pcChoice}`);
-    displayPlayerChoice(playerChoice);
+const displayComputerChoice = (computerChoice = "") => {
+    const computerChoiceHeading = document.querySelector(".computer-choice");
+
+    let computerChoiceTextHolder = document.querySelector(".computer-choice-display");
+    if (!computerChoiceTextHolder) {
+        computerChoiceTextHolder = document.createElement("span");
+        computerChoiceTextHolder.className = "computer-choice-display";
+    }
+    computerChoiceTextHolder.textContent = computerChoice;
+    computerChoiceHeading.appendChild(computerChoiceTextHolder);
 }
 
-const scissorsButtonClicked = () => {
-    playerChoice = SCISSORS;
-    pcChoice = generateComputerChoice();
-    console.log(`PC choice: ${pcChoice}`);
-    displayPlayerChoice(playerChoice);
-}
+
 
 const initGame = () => {
     for (let i = 1; i <= totalRounds; i++) {
